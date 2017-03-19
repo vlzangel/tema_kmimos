@@ -1,47 +1,31 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# wordpress
 
-# Folder config file
-Desktop.ini
+# Carpetas
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+/wp-admin/
+/wp-includes/
+/wp-content/languages/
+/wp-content/upgrade/
+/wp-content/uploads/
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+Respaldo*
 
-# Windows shortcuts
-*.lnk
+# Archivos
 
-# =========================
-# Operating System Files
-# =========================
+.htaccess
+favicon.ico
+index.php
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-config.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
 
-# OSX
-# =========================
-
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
