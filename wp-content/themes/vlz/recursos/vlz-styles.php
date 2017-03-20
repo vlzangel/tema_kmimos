@@ -197,7 +197,7 @@
 
 		#site-navigation-user .secundary-menu li a{
 			color: #FFF;
-			padding: 7px 10px;
+			padding: 5px 10px;
 			text-decoration: none;
 			font-size: 14px;
 			font-family: "Roboto Condensed",Arial, Helvetica, sans-serif;
@@ -237,6 +237,16 @@
 		    border-radius: 5px;
 		    width: 15%;
 		    outline: none;
+		    border: 0;
+		    outline: none;
+      	}
+
+      	.vlz_select{
+  		    padding: 11px;
+		    border-radius: 5px;
+		    width: 15%;
+		    outline: none;
+		    border: 0;
       	}
 
       	.vlz_date{
@@ -256,7 +266,7 @@
       	}
 
       	.vlz_boton{
-  		    padding: 10px;
+  		    padding: 8px 10px 9px;
 		    border-radius: 5px;
 		    width: 15%;
 		    background: #6cba9b;
@@ -272,7 +282,7 @@
 		.vlz_contenedor_cuidador {
 		    position: relative;
 		    display: inline-block;
-		    width: 25%;
+		    width: 33.33333333%;
 		    box-sizing: border-box;
 		    padding: 10px;
 		}
@@ -321,10 +331,47 @@
 
 		a.vlz_link {
 		    position: absolute;
-		    top: 0px;
-		    left: 0px;
-		    width: 100%;
-		    height: 100%;
+		    top: 10px;
+		    left: 10px;
+		    width: calc( 100% - 20px );
+		    height: calc( 100% - 20px );
 		    z-index: 100;
+		}
+
+		a.vlz_link:hover{
+		    background: rgba(0,0,0,0.5);
+		}
+
+	/* Perfil */
+
+		.vlz_contenedor_cuidador_perfil {
+		    position: relative;
+		    display: inline-block;
+		    width: 100%;
+		    box-sizing: border-box;
+		    padding: 10px;
+		}
+
+		.vlz_contenedor_foto_perfil {
+		    height: 450px;
+		    background-size: cover;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    border: solid 1px #CCC;
+		    z-index: 1;
+		    filter: blur(1px);
+		    overflow: hidden;
+		}
+
+		.vlz_foto_perfil {
+		    height: 430px;
+		    width: calc( 100% - 60px );
+		    background-size: contain;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    position: absolute;
+		    top: 20px;
+		    z-index: 100;
+		    left: 30px;
 		}
 </style>

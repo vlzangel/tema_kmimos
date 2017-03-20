@@ -3,12 +3,14 @@
 	function buscar_inicio(){
 		var est = $("#estado").val();
 		var mun = $("#municipio").val();
+		var nom = $("#name").val();
 		jQuery.ajax({
 		    url: '<?php echo get_template_directory_uri()."/funciones/buscador.php"; ?>',
 		    type: "post",
 		    data: {
 				estado: est,
-				municipio: mun
+				municipio: mun,
+				name: nom
 			},
 		    success: function (data) {
 		    	console.log(data);
@@ -47,20 +49,5 @@
 
 		return html;
 	}
-
-	$(document).ready(function(){ 
-		<?php
-			$estados = $wpdb->get_results("SELECT * FROM states ORDER BY name ASC");
-			$ests = "<option>Seleccione un Estado</option>";
-			foreach ($estados as $value) {
-				$ests .= utf8_decode( "<option value={$value->id}>{$value->name}</option>" );
-			}
-			echo "
-				$('#estado').html('{$ests}');
-				$('#estado option[value=1]').attr('selected', true);
-				buscar_inicio();
-			";
-		?>
-	});
 	
 </script>

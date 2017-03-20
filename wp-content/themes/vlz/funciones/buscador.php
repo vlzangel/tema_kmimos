@@ -6,7 +6,14 @@
 	$filtros = "";
 
 	if( $estado != "" ){ 	$filtros .= " estado LIKE '%=$estado=%' AND "; 			}
-	if( $municipio != "" ){ $filtros .= " municipio LIKE '%=$municipio=%' AND "; }
+	if( $municipio != "" ){ $filtros .= " municipio LIKE '%=$municipio=%' AND "; 	}
+
+	if( $name != "" ){ 
+		$partes = explode(" ", $name);
+		foreach ($partes as $parte) {
+			$filtros .= " ( nombre LIKE '%$parte%' OR apellido LIKE '%$parte%' ) AND "; 
+		}
+	}
 
 	$sql = "
 		SELECT 
@@ -17,7 +24,9 @@
 			{$filtros}
 			activo = 1 
 		ORDER BY 
-			nombre";
+			rating DESC
+		LIMIT
+			0, 15";
 	
 	$result = $conn_my->query($sql);
 	$resultados = array();
@@ -25,12 +34,12 @@
 		$nombre_fichero = "../../../uploads/cuidadores/avatares/{$cuidador['id']}/0.jpg";
 		if( file_exists($nombre_fichero) ){
 			if( filesize($nombre_fichero) > 0 ){
-				$foto = "http://192.168.0.100/wordpress/wp-content/uploads/cuidadores/avatares/{$cuidador['id']}/0.jpg";
+				$foto = "http://localhost/tema_kmimos/wp-content/uploads/cuidadores/avatares/{$cuidador['id']}/0.jpg";
 			}else{
-				$foto = "http://192.168.0.100/wordpress/wp-content/themes/vlz/recursos/imgs/noimg.png";
+				$foto = "http://localhost/tema_kmimos/wp-content/themes/vlz/recursos/imgs/noimg.png";
 			}
 		}else{
-			$foto = "http://192.168.0.100/wordpress/wp-content/themes/vlz/recursos/imgs/noimg.png";
+			$foto = "http://localhost/tema_kmimos/wp-content/themes/vlz/recursos/imgs/noimg.png";
 		}
 		$resultados[] = array(
 			"id"  => $cuidador['id'],
