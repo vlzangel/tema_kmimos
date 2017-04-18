@@ -24,9 +24,7 @@
 			{$filtros}
 			activo = 1 
 		ORDER BY 
-			rating DESC
-		LIMIT
-			0, 15";
+			rating DESC";
 	
 	$result = $conn_my->query($sql);
 	$resultados = array();

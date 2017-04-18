@@ -282,7 +282,7 @@
 		.vlz_contenedor_cuidador {
 		    position: relative;
 		    display: inline-block;
-		    width: 33.33333333%;
+		    width: 25%;
 		    box-sizing: border-box;
 		    padding: 10px;
 		}
